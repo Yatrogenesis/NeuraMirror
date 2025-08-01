@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Pantalla principal para grabación y síntesis -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.neuramirror.ui.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_settings"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_home_to_savedVoices"
+            app:destination="@id/savedVoicesFragment" />
+    </fragment>
+
+    <!-- Pantalla de voces guardadas -->
+    <fragment
+        android:id="@+id/savedVoicesFragment"
+        android:name="com.neuramirror.ui.saved.SavedVoicesFragment"
+        android:label="@string/saved_voices"
+        tools:layout="@layout/fragment_saved_voices">
+        <action
+            android:id="@+id/action_savedVoices_to_voiceDetail"
+            app:destination="@id/voiceDetailFragment" />
+        <action
+            android:id="@+id/action_savedVoices_to_create"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- Pantalla de detalle de voz guardada -->
+    <fragment
+        android:id="@+id/voiceDetailFragment"
+        android:name="com.neuramirror.ui.saved.VoiceDetailFragment"
+        android:label="@string/voice_details"
+        tools:layout="@layout/fragment_voice_detail">
+        <argument
+            android:name="voiceId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_voiceDetail_to_edit"
+            app:destination="@id/editVoiceFragment" />
+    </fragment>
+
+    <!-- Pantalla de edición de voz -->
+    <fragment
+        android:id="@+id/editVoiceFragment"
+        android:name="com.neuramirror.ui.edit.EditVoiceFragment"
+        android:label="@string/edit_voice"
+        tools:layout="@layout/fragment_edit_voice">
+        <argument
+            android:name="voiceId"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Pantalla de configuración -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.neuramirror.ui.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <!-- Pantalla de ayuda -->
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.neuramirror.ui.help.HelpFragment"
+        android:label="@string/help_support"
+        tools:layout="@layout/fragment_help" />
+</navigation>

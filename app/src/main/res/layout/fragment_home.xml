@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Título principal -->
+    <TextView
+        android:id="@+id/tvWelcomeTitle"
+        style="@style/Widget.NeuraMirror.TextView.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/welcome_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Sección de grabación -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRecording"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcomeTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/Widget.NeuraMirror.TextView.Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/record_sample" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/record_hint"
+                android:textColor="@color/text_secondary" />
+
+            <!-- Visualizador de audio -->
+            <FrameLayout
+                android:id="@+id/waveformContainer"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/waveform_background">
+
+                <!-- Aquí se añadirá el visualizador de forma de onda dinámicamente -->
+                <View
+                    android:id="@+id/dummyWaveform"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible" />
+
+            </FrameLayout>
+
+            <!-- Controles de grabación -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/record_sample"
+                    android:drawableStart="@drawable/ic_record"
+                    android:drawablePadding="8dp" />
+
+                <Space
+                    android:layout_width="16dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnSelectFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_audio_file"
+                    style="?attr/materialButtonOutlinedStyle" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnProcessRecording"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/process_recording"
+                android:enabled="false" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Sección de síntesis de voz -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSynthesis"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardRecording">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                style="@style/Widget.NeuraMirror.TextView.Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/voice_synthesis" />
+
+            <!-- Campo de texto a sintetizar -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTextToSynthesize"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="16dp"
+                android:hint="@string/enter_text"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTextToSynthesize"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:enabled="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Selector de emoción -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/voice_emotion"
+                android:textColor="@color/text_secondary" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupEmotions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNeutral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emotion_neutral"
+                    android:checked="true"
+                    android:enabled="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipHappy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emotion_happy"
+                    android:enabled="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emotion_sad"
+                    android:enabled="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAngry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emotion_angry"
+                    android:enabled="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSurprised"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emotion_surprised"
+                    android:enabled="false" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Controles de síntesis -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnGenerateVoice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/generate_voice"
+                    android:enabled="false" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnPlayGenerated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/play_cloned"
+                    android:enabled="false"
+                    style="?attr/materialButtonOutlinedStyle" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

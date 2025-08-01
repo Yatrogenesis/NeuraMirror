@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nombre de la aplicación -->
+    <string name="app_name">NeuraMirror</string>
+    
+    <!-- Pantalla principal -->
+    <string name="welcome_message">Clona voces con NeuraMirror</string>
+    <string name="record_sample">Grabar muestra de voz</string>
+    <string name="record_hint">Graba al menos 5 segundos de audio claro para obtener mejores resultados</string>
+    <string name="select_audio_file">Seleccionar archivo</string>
+    <string name="process_recording">Procesar grabación</string>
+    <string name="voice_synthesis">Síntesis de voz</string>
+    <string name="enter_text">Escribe el texto que quieres sintetizar...</string>
+    <string name="voice_emotion">Emoción de la voz</string>
+    <string name="generate_voice">Generar voz</string>
+    <string name="play_cloned">Reproducir</string>
+    
+    <!-- Emociones -->
+    <string name="emotion_neutral">Neutral</string>
+    <string name="emotion_happy">Feliz</string>
+    <string name="emotion_sad">Triste</string>
+    <string name="emotion_angry">Enojado</string>
+    <string name="emotion_surprised">Sorprendido</string>
+    
+    <!-- Navegación -->
+    <string name="home">Inicio</string>
+    <string name="saved_voices">Voces guardadas</string>
+    <string name="settings">Configuración</string>
+    <string name="help">Ayuda</string>
+    <string name="about">Acerca de</string>
+    <string name="help_support">Ayuda y soporte</string>
+    
+    <!-- Pantalla de voces guardadas -->
+    <string name="search_voices">Buscar voces guardadas</string>
+    <string name="filter_newest">Más recientes</string>
+    <string name="filter_most_used">Más usadas</string>
+    <string name="filter_alphabetical">Alfabético</string>
+    <string name="no_saved_voices">No tienes voces guardadas</string>
+    <string name="create_voice">Crear voz</string>
+    <string name="voice_icon">Icono de voz</string>
+    <string name="options">Opciones</string>
+    <string name="voice_details">Detalles de la voz</string>
+    <string name="edit_voice">Editar voz</string>
+    
+    <!-- Pantalla de configuración -->
+    <string name="appearance">Apariencia</string>
+    <string name="theme">Tema</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="theme_system">Sistema</string>
+    <string name="processing_settings">Procesamiento</string>
+    <string name="processing_mode">Modo de procesamiento</string>
+    <string name="processing_cloud">Cloud (mayor velocidad)</string>
+    <string name="processing_local">Local (mayor privacidad)</string>
+    <string name="language_settings">Idioma</string>
+    <string name="api_settings">Configuración de API</string>
+    <string name="api_key">Clave API (opcional)</string>
+    <string name="api_key_description">Introduce tu clave API de MiniMax para aumentar los límites de uso</string>
+    <string name="advanced_settings">Avanzado</string>
+    <string name="clear_cache">Limpiar caché</string>
+    <string name="reset_settings">Restablecer configuración</string>
+    <string name="save_settings">Guardar configuración</string>
+    
+    <!-- Pantalla de ayuda -->
+    <string name="faq">Preguntas frecuentes</string>
+    <string name="faq_question_1">¿Cuánto tiempo de audio necesito para clonar una voz?</string>
+    <string name="faq_answer_1">NeuraMirror puede generar resultados con tan solo 5 segundos de audio, aunque recomendamos 10-15 segundos para mayor calidad. La muestra debe ser clara y sin ruido de fondo.</string>
+    <string name="faq_question_2">¿Mis grabaciones se envían a algún servidor?</string>
+    <string name="faq_answer_2">Depende del modo de procesamiento que elijas. En modo "Cloud", los datos se envían a los servidores de MiniMax para procesamiento. En modo "Local", todo se procesa en tu dispositivo sin enviar datos.</string>
+    <string name="faq_question_3">¿Qué idiomas están soportados?</string>
+    <string name="faq_answer_3">NeuraMirror soporta múltiples idiomas, incluyendo español, inglés, francés, alemán, italiano, portugués, chino, japonés, coreano, ruso y árabe, entre otros.</string>
+    <string name="contact_us">Contáctanos</string>
+    <string name="contact_email">Enviar correo electrónico</string>
+    <string name="visit_website">Visitar sitio web</string>
+    <string name="legal_documents">Documentos legales</string>
+    <string name="terms_conditions">Términos y condiciones</string>
+    <string name="privacy_policy">Política de privacidad</string>
+    <string name="third_party_licenses">Licencias de terceros</string>
+    <string name="version">Versión 1.0.0</string>
+    
+    <!-- Mensajes de estado -->
+    <string name="recording_complete">Grabación completada</string>
+    <string name="error_recording">Error al grabar audio</string>
+    <string name="error_no_recording">No hay grabación para procesar</string>
+    <string name="voice_model_created">Modelo de voz creado correctamente</string>
+    <string name="error_creating_model">Error al crear modelo de voz</string>
+    <string name="error_processing">Error al procesar la grabación</string>
+    <string name="error_no_voice_model">No hay modelo de voz disponible</string>
+    <string name="error_empty_text">Introduce texto para sintetizar</string>
+    <string name="voice_generated">Voz generada correctamente</string>
+    <string name="error_synthesizing">Error al sintetizar voz</string>
+    <string name="file_selected">Archivo seleccionado</string>
+    <string name="error_file_not_found">Archivo no encontrado</string>
+    <string name="model_saved">Modelo guardado correctamente</string>
+    <string name="error_saving_model">Error al guardar modelo</string>
+    <string name="error_no_generated_audio">No hay audio generado para reproducir</string>
+    <string name="success_export">Audio exportado a: %1$s</string>
+    <string name="error_exporting">Error al exportar audio</string>
+    
+    <!-- Servicio de procesamiento de audio -->
+    <string name="notification_channel_name">Procesamiento de audio</string>
+    <string name="notification_channel_description">Notificaciones para el procesamiento de audio</string>
+    <string name="service_running">Servicio de procesamiento de audio activo</string>
+    <string name="processing_voice">Procesando voz...</string>
+    <string name="synthesizing_voice">Sintetizando voz...</string>
+    
+    <!-- Permisos -->
+    <string name="permission_record_audio_rationale">NeuraMirror necesita permiso para grabar audio para poder clonar voces</string>
+    <string name="permission_denied_record_audio">No se puede clonar voces sin permiso para grabar audio</string>
+    <string name="permission_storage_rationale">NeuraMirror necesita permiso para acceder al almacenamiento para guardar y cargar voces</string>
+    <string name="permission_denied_storage">Funcionalidad limitada sin acceso al almacenamiento</string>
+    
+    <!-- Acciones -->
+    <string name="action_record">Grabar voz</string>
+    <string name="action_stop">Detener grabación</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="action_rename">Renombrar</string>
+    <string name="action_export">Exportar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_confirm">Confirmar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_ok">Aceptar</string>
+    
+    <!-- Diálogos -->
+    <string name="dialog_save_model_title">Guardar modelo de voz</string>
+    <string name="dialog_save_model_hint">Nombre del modelo</string>
+    <string name="dialog_delete_model_title">Eliminar modelo</string>
+    <string name="dialog_delete_model_message">¿Estás seguro de que quieres eliminar este modelo de voz? Esta acción no se puede deshacer.</string>
+    <string name="dialog_export_title">Exportar audio</string>
+    <string name="dialog_export_message">Selecciona el formato para exportar</string>
+    <string name="dialog_reset_settings_title">Restablecer configuración</string>
+    <string name="dialog_reset_settings_message">¿Estás seguro de que quieres restablecer toda la configuración a valores predeterminados?</string>
+    <string name="dialog_clear_cache_title">Limpiar caché</string>
+    <string name="dialog_clear_cache_message">¿Estás seguro de que quieres limpiar toda la caché de la aplicación? Esto no afectará a tus modelos guardados.</string>
+</resources>

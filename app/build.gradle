@@ -1,0 +1,177 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.neuramirror"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Habilitar multidex
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            debuggable true
+        }
+    }
+    
+    // Configuración de firma para Google Play
+    signingConfigs {
+        release {
+            // Estas propiedades deben configurarse en el archivo local.properties o como variables de entorno
+            // keyAlias keystoreProperties['keyAlias']
+            // keyPassword keystoreProperties['keyPassword']
+            // storeFile file(keystoreProperties['storeFile'])
+            // storePassword keystoreProperties['storePassword']
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    
+    buildFeatures {
+        viewBinding true
+    }
+    
+    // Habilitar soporte para archivos de navegación de Android
+    sourceSets {
+        main.res.srcDirs += 'src/main/res/navigation'
+    }
+    
+    // Configurar opciones de packaging
+    packagingOptions {
+        resources {
+            excludes += [
+                'META-INF/LICENSE.txt',
+                'META-INF/NOTICE.txt',
+                'META-INF/LICENSE',
+                'META-INF/NOTICE',
+                'META-INF/DEPENDENCIES',
+                'META-INF/*.kotlin_module'
+            ]
+        }
+    }
+    
+    // Configuración de vectores drawables
+    vectorDrawables {
+        useSupportLibrary true
+    }
+    
+    // Configuración para Play Store Asset Delivery
+    bundle {
+        language {
+            enableSplit = true
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+}
+
+dependencies {
+    // Dependencias de Android
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.activity:activity-ktx:1.8.2'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    
+    // Material Design
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+    
+    // Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.6'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.6'
+    
+    // Room Database
+    implementation 'androidx.room:room-runtime:2.6.1'
+    implementation 'androidx.room:room-ktx:2.6.1'
+    kapt 'androidx.room:room-compiler:2.6.1'
+    
+    // Dagger Hilt
+    implementation 'com.google.dagger:hilt-android:2.50'
+    kapt 'com.google.dagger:hilt-android-compiler:2.50'
+    
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+    
+    // Timber para logging
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+    
+    // TensorFlow Lite para procesamiento de ML
+    implementation 'org.tensorflow:tensorflow-lite:2.15.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
+    
+    // Librería de procesamiento de audio
+    implementation 'com.github.massoodahi:FFT-Signal-Processing:1.2.0'
+    
+    // Librería para visualización de audio
+    implementation 'com.github.lincollincol:amplituda:2.2.2'
+    
+    // Coil para carga de imágenes
+    implementation 'io.coil-kt:coil:2.5.0'
+    
+    // FFmpeg para procesamiento de audio
+    implementation 'com.arthenica:mobile-ffmpeg-full:4.4.LTS'
+    
+    // ExoPlayer para reproducción de audio
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.19.1'
+    
+    // Retrofit para API calls
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+    
+    // Gson para parsing JSON
+    implementation 'com.google.code.gson:gson:2.10.1'
+    
+    // OSS Licenses
+    implementation 'com.google.android.gms:play-services-oss-licenses:17.0.1'
+    
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+// Configuración de Kapt
+kapt {
+    correctErrorTypes true
+}

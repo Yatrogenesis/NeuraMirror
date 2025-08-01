@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.NeuraMirror" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnBackground">@color/on_background</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        
+        <!-- Error colors -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/on_error</item>
+        
+        <!-- Customize other theme attributes -->
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/text_primary</item>
+        
+        <!-- Shape theming -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.NeuraMirror.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.NeuraMirror.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.NeuraMirror.LargeComponent</item>
+    </style>
+    
+    <!-- AppBar styles -->
+    <style name="Theme.NeuraMirror.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+    <style name="Theme.NeuraMirror.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+    
+    <!-- Shape appearances -->
+    <style name="ShapeAppearance.NeuraMirror.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    
+    <style name="ShapeAppearance.NeuraMirror.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+    
+    <style name="ShapeAppearance.NeuraMirror.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+    
+    <!-- Custom component styles -->
+    <style name="Widget.NeuraMirror.TextView.Title" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+    
+    <style name="Widget.NeuraMirror.TextView.Subtitle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    
+    <style name="Widget.NeuraMirror.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="Widget.NeuraMirror.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="Widget.NeuraMirror.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/surface</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+</resources>

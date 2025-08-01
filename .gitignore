@@ -1,0 +1,41 @@
+# Archivos compilados y binarios
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Archivos de registro
+*.log
+
+# Archivos de configuración local
+local.properties
+keystore.properties
+*.keystore
+*.jks
+
+# Gradle
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IntelliJ/Android Studio
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Carpetas generadas
+bin/
+gen/
+out/
+
+# Archivos macOS
+.DS_Store
+
+# Archivos específicos de la aplicación
+/app/release
+/app/debug

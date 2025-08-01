@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "MiniMax": {
+      "command": "uvx",
+      "args": [
+        "minimax-mcp",
+        "-y"
+      ],
+      "env": {
+        "MINIMAX_API_KEY": "${API_KEY}",
+        "MINIMAX_MCP_BASE_PATH": "${BASE_PATH}",
+        "MINIMAX_API_HOST": "https://api.minimax.io",
+        "MINIMAX_API_RESOURCE_MODE": "local"
+      }
+    }
+  },
+  "aion": {
+    "protocol_version": "2.0",
+    "features": {
+      "voice_cloning": true,
+      "adaptive_learning": true,
+      "multi_emotion": true,
+      "cross_lingual": true
+    },
+    "performance_targets": {
+      "response_time_ms": 1,
+      "failure_rate_percent": 0.001,
+      "memory_usage_mb_max": 200
+    },
+    "model_settings": {
+      "embedding_size": 256,
+      "sample_rate": 22050,
+      "frame_length": 512,
+      "hop_length": 128,
+      "mel_bins": 80
+    },
+    "voice_parameters": {
+      "emotions": [
+        "neutral",
+        "happy",
+        "sad",
+        "angry",
+        "surprised"
+      ],
+      "speed_range": [0.5, 2.0],
+      "pitch_range": [0.5, 2.0]
+    },
+    "integration": {
+      "minimax_mcp": {
+        "enabled": true,
+        "voice_cloning_endpoint": "voice-cloning",
+        "text_to_speech_endpoint": "text-to-speech",
+        "voice_design_endpoint": "voice-design"
+      }
+    }
+  }
+}
